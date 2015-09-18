@@ -105,16 +105,16 @@ class StreamingKMeans(StreamingDemo):
                     # scatter plot for two dimensions
                     if self.ndims == 2:
                         if viz is None:
-                            viz = lgn.scatterstreaming(pts[:, 0], pts[:, 1], label=clrs, size=s)
+                            viz = lgn.scatterstreaming(pts[:, 0], pts[:, 1], group=clrs, size=s)
                         else:
-                            viz.append(pts[:, 0], pts[:, 1], label=clrs, size=s)
+                            viz.append(pts[:, 0], pts[:, 1], group=clrs, size=s)
 
                     # line plot for one dimension
                     elif self.ndims == 1:
                         if viz is None:
-                            viz = lgn.linestreaming(pts, label=clrs, size=s/2)
+                            viz = lgn.linestreaming(pts, group=clrs, size=s/2)
                         else:
-                            viz.append(pts, label=clrs, size=s/2)
+                            viz.append(pts, group=clrs, size=s/2)
 
                     else:
                         raise Exception('Plotting only supported with 1 or 2 dimensions')
